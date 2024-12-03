@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    /* outline: 1px solid red; para debug*/
 }
 html {
     scroll-behavior: smooth;
@@ -67,7 +68,7 @@ header a {
     transition: .2s;
 }
 
-header a:hover{
+header nav.menu-desktop a:hover{
     color: #fff;
     transform: scale(1.05);
 }
@@ -75,14 +76,57 @@ header nav ul{
     list-style-type: none;
 }
 
-header nav ul li{
+header nav.menu-desktop ul li{
     display: inline-block;
     padding: 0 40px;
 }
 
-
-
-
+/* Estilo do menu mobile */
+.btn-abrir-menu i{
+    color: #ff2268;
+    font-size: 40px;
+}
+.menu-mobile{
+    background-color: #444444;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+}
+.menu-mobile nav ul{
+    text-align: right;
+}
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+.menu-mobile nav ul a:hover{
+    background-color: #ff2268;
+    color: #000;
+}
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+.menu-mobile .btn-fechar i{
+    color: #ff2268;
+    font-size: 30px;
+}
+.overlay-menu{
+    background-color: #000000a7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
 /* Estilo do topo do site */
 
 section.topo-do-site{
@@ -107,13 +151,11 @@ section.topo-do-site .flex{
 
 .topo-do-site .txt-topo-site p {
     color: #fff;
-    margin: 40px 0;
+    margin: 40px 0px;
 }
-
 .topo-do-site .img-topo-site img{
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
-
 }
 
 @keyframes flutuar{
@@ -124,16 +166,13 @@ section.topo-do-site .flex{
         top: 30px;
     }
 }
-
 /*  Estilo das Especialidades */
-
 section.especialidades{
     padding: 40px 4%;
 }
 section.especialidades .flex{
     gap: 60px;
 }
-
 .especialidades .especialides-box{
     color: #fff;
     padding: 40px;
@@ -142,24 +181,19 @@ section.especialidades .flex{
     transition: .2s;
     /* text-align: justify; depois da edição do texto eu vejo se precisa dessa config*/
 }
-
 .especialidades .especialides-box:hover{
     transform: scale(1.05);
     box-shadow: 0 0 15px #ffffff88;
 }
-
 .especialidades .especialides-box i{
     font-size: 70px;
     color: #F74780;
 }
-
 .especialidades .especialides-box h3{
     font-size: 28px;
     margin: 15px 0;
 }
-
 /* estilo do sobre */
-
 .img-sobre img {
     border-radius: 20px;
 }
@@ -330,4 +364,81 @@ footer .line-footer p i{
 footer .line-footer p a{
     color: #fff;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1020px){
+    /* claases gerais */
+    .flex{
+        flex-direction: column;
+    }
+    h2.titulo{
+        font-size: 34px;
+        line-height: 30px;
+    }
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+    /* cabeçalho */
+    .menu-desktop,
+    .bnt-contato{
+        display: none;
+    }
+    /* topo do site */
+    section.topo-do-site .flex{
+        gap: 40px;
+    }
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+    .topo-do-site h1{
+        font-size: 30px;
+    }
+    .topo-do-site .img-topo-site img{
+        width: 100%;
+    }
+
+    /*  Estilo das Especialidades */
+
+    section.especialidades{
+        padding: 40px 8%;
+    }
+
+    /* estilo do sobre */
+
+    section.sobre{
+        padding: 80px 8%;
+    }
+    section.sobre .flex{
+        flex-direction: column-reverse;
+    }
+    .sobre .txt-sobre h2{
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+    .btn-social{
+        text-align: center;
+    }
+    .img-sobre img {
+        width: 100%;
+    }
+    /* portifólio */
+    section.portifolio{
+        padding: 80px 8%;
+    }
+    .img-port{
+        width: 100%;
+        /* max-width: 360px;
+        margin: 0 auto; Esses dois ultimos para o caso de eu querer mudar conforme venham mais projetos */
+    }
+    section.portifolio .flex{
+        gap: 40px;
+    }
+    /* footer */
+    footer .flex{
+        gap: 30px;
+    }
+    footer .line-footer{
+        text-align: center;
+    }
 }

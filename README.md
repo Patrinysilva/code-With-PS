@@ -1,6 +1,6 @@
 PT - BR
 # code-With-PS
-<Code With/> PS é um projeto de portfólio pessoal desenvolvido com HTML e CSS. O site apresenta uma interface moderna e responsiva que destaca minhas especialidades como desenvolvedora front-end, além de incluir seções sobre mim, portfólio de projetos e um formulário de contato.
+< Code With/> PS é um projeto de portfólio pessoal desenvolvido com HTML e CSS. O site apresenta uma interface moderna e responsiva que destaca minhas especialidades como desenvolvedora front-end, além de incluir seções sobre mim, portfólio de projetos e um formulário de contato.
 
 Funcionalidades:
  * Menu de navegação responsivo: Facilita a navegação entre as seções do site.
